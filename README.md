@@ -2,6 +2,8 @@
 
 Make Qr Codes suited for the terminal.
 
+![Qr Code](https://github.com/Sec-ant/ansi-qr-code/assets/10386119/cea308cc-102e-4367-b24a-29d18604ef52)
+
 ## Install
 
 ```ts
