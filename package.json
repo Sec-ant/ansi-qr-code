@@ -1,0 +1,64 @@
+{
+  "name": "@sec-ant/ansi-qr-code",
+  "description": "Make Qr Codes suited for the terminal",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sec-ant/ansi-qr-code"
+  },
+  "homepage": "https://github.com/Sec-ant/ansi-qr-code",
+  "bugs": {
+    "url": "https://github.com/Sec-ant/ansi-qr-code/issues",
+    "email": "zzwu@zju.edu.cn"
+  },
+  "keywords": [
+    "typescript",
+    "ansi-qr-code",
+    "lib"
+  ],
+  "author": {
+    "name": "Ze-Zheng Wu"
+  },
+  "license": "MIT",
+  "config": {},
+  "scripts": {
+    "type-check": "tsc --noEmit --emitDeclarationOnly false",
+    "prebuild": "npm run type-check",
+    "build": "vite build",
+    "postbuild": "tsc",
+    "pretest": "npm run build",
+    "pretest:ui": "npm run build",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "prepublishOnly": "npm run build",
+    "ncu": "npx npm-check-updates -u",
+    "postncu": "npm i"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitest/browser": "^0.34.2",
+    "@vitest/coverage-istanbul": "^0.34.2",
+    "@vitest/ui": "^0.34.2",
+    "eslint": "^8.47.0",
+    "npm-check-updates": "^16.12.3",
+    "playwright": "^1.37.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.2"
+  },
+  "dependencies": {
+    "@sec-ant/qr-code-generator": "^0.0.3"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "./tsconfig.json"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "types": [
+      "node",
+      "vitest"
+    ],
+    "resolveJsonModule": true,
+    "allowJs": true
+  },
+  "include": [
+    "./scripts",
+    "./vite.config.ts",
+    "./package.json",
+  ]
+}
