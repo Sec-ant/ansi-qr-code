@@ -18,6 +18,11 @@ const DEFAULT_ANSI_QR_CODE_OPTIONS: Required<AnsiQrCodeOptions> = {
   transparentBlack: false,
 };
 
+export interface AnsiQrCodeResult {
+  value: string;
+  size: number;
+}
+
 export function makeAnsiQrCode(
   value: string,
   {
@@ -27,7 +32,7 @@ export function makeAnsiQrCode(
     transparentWhite = DEFAULT_ANSI_QR_CODE_OPTIONS.transparentWhite,
     transparentBlack = DEFAULT_ANSI_QR_CODE_OPTIONS.transparentBlack,
   }: AnsiQrCodeOptions = DEFAULT_ANSI_QR_CODE_OPTIONS
-): [string, number] {
+): AnsiQrCodeResult {
   const qr = QrCode.encodeText(value, ecc);
   let qrCode = "";
   const blackBlock = transparentBlack ? "\x1b[0m　" : "\x1b[40m　";
@@ -51,5 +56,8 @@ export function makeAnsiQrCode(
     qrCode += "\x1b[0m\n";
   }
   qrCode += "\x1b[0m";
-  return [qrCode, qr.size + 2 * border];
+  return {
+    value: qrCode,
+    size: qr.size + 2 * border,
+  };
 }

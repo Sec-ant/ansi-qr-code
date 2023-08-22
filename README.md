@@ -13,9 +13,9 @@ npm i @sec-ant/ansi-qr-code
 ```ts
 import { makeAnsiQrCode } from "@sec-ant/ansi-qr-code";
 
-const qrCode = makeAnsiQrCode("Hello, world!");
+const { value, size } = makeAnsiQrCode("Hello, world!");
 
-console.log(qrCode);
+console.log(value);
 ```
 
 ## License
