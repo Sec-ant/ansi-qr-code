@@ -1,18 +1,3 @@
-# @sec-ant/ansi-qr-code
-
-Make Qr Codes suited for the terminal.
-
-![ansi-qr-code-demo](https://github.com/Sec-ant/ansi-qr-code/assets/10386119/b3c7aa16-c178-4722-adc3-6a6f9f7ce1f6)
-
-## Install
-
-```bash
-npm i @sec-ant/ansi-qr-code
-```
-
-## Usage
-
-```ts
 import {
   makeAnsiQrCode,
   makeSmallAnsiQrCode,
@@ -21,7 +6,7 @@ import {
   BG_BLUE,
   FG_RED,
   RESET,
-} from "@sec-ant/ansi-qr-code";
+} from "./src/index.js";
 
 const { value: bigValue, size: bigSize } = makeAnsiQrCode("Hello, world!", {
   ecc: Ecc.LOW,
@@ -43,8 +28,3 @@ const { value: smallValue, size: smallSize } = makeSmallAnsiQrCode(
 );
 
 console.log(smallValue, smallSize);
-```
-
-## License
-
-MIT

@@ -33,8 +33,11 @@
   "license": "MIT",
   "config": {},
   "scripts": {
+    "dev": "vite",
+    "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit --emitDeclarationOnly false",
-    "prebuild": "npm run type-check",
+    "format": "prettier . --write",
+    "prebuild": "npm run lint && npm run type-check && npm run format",
     "build": "vite build",
     "postbuild": "tsc",
     "pretest": "npm run build",
@@ -54,6 +57,7 @@
     "eslint": "^8.47.0",
     "npm-check-updates": "^16.13.0",
     "playwright": "^1.37.1",
+    "prettier": "^3.0.2",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vitest": "^0.34.2"
