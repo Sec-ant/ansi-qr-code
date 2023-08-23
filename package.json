@@ -2,7 +2,7 @@
   "name": "@sec-ant/ansi-qr-code",
   "description": "Make Qr Codes suited for the terminal",
   "private": false,
-  "version": "0.0.3",
+  "version": "1.0.0",
   "type": "module",
   "files": [
     "./dist"
